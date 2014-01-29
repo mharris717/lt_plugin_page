@@ -5,7 +5,7 @@ require 'sinatra'
 require 'haml'
 
 get "/" do
-  expires 300, :public, :must_revalidate
+  expires 60*15, :public, :must_revalidate
   etag "plugins"
 
   @plugins = Plugin.all
