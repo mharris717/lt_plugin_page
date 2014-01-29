@@ -38,7 +38,7 @@ class Plugin
   end
 
   class << self
-    fattr(:raw) { open("http://plugins.lighttable.com").read }
+    fattr(:raw) { open("http://plugins.lighttable.com").read.force_encoding("ASCII-8BIT") }
     fattr(:raw_local) do
       File.read("plugins.edn").force_encoding("ASCII-8BIT")
     end
