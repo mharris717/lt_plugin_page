@@ -1,0 +1,21 @@
+%table.tablesorter
+  %thead
+    %tr
+      %th Name
+      %th Version
+      %th Author
+      %th Installs
+      %th Added
+      %th Updated
+      %th Desc
+  %tbody
+    - @plugins.each do |plugin|
+      %tr
+        %td
+          %a{href: plugin.source}= plugin.name
+        %td= plugin.version
+        %td= plugin.author.pretty_list
+        %td= plugin.installs
+        %td= plugin.added.pretty
+        %td= plugin.updated.pretty
+        %td= plugin.desc
